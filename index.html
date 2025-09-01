@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="sukuma wiki" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>supakazi</title>
+        <style>
+            @font-face {
+                font-family: "poppins";
+                src:
+                    url("font/poppins-bold-webfont.woff2") format("woff2"),
+                    url("font/poppins-bold-webfont.woff") format("woff");
+                font-weight: normal;
+                font-style: normal;
+            }
+
+            body {
+                margin: 0;
+                background: #1a1a1b;
+                height: 100vh;
+                font-family: monospace;
+                font-size: 2em;
+                color: #eee;
+                user-select: none;
+            }
+            .red {
+                color: red;
+            }
+            #nav {
+                display: block;
+                background-color: #222;
+                padding: 10px;
+            }
+            a {
+                color: red;
+            }
+            svg,
+            p,
+            h1,
+            h2,
+            h3,
+            h4 {
+                display: block;
+                margin: 0;
+                padding: 1em;
+            }
+            h1,
+            h2,
+            h3,
+            h4 {
+                font-family: "poppins";
+            }
+            #content {
+                display: block;
+                padding: 1em;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="nav"></div>
+        <div id="content"></div>
+
+        <script src="js/marked.js"></script>
+
+        <script>
+            var oldtxt = "x";
+            // fill nav
+            async function makenav() {
+                let file = await fetch("pages/nav.md");
+                let text = await file.text();
+                document.getElementById("nav").innerHTML = marked(text);
+            }
+
+            // fill content
+            async function fill(here) {
+                if (here === oldtxt) {
+                    return;
+                } else {
+                    document.getElementById("content").innerHTML = "";
+                }
+
+                let file = await fetch("pages/" + here + ".md");
+                let text = await file.text();
+                document.getElementById("content").innerHTML = marked(text);
+                document.body.className = here;
+                // logoanim();
+            }
+
+            // click event for nav
+            document
+                .getElementById("nav")
+                .addEventListener("click", function (e) {
+                    if (e.target && e.target.nodeName == "A") {
+                        var hashval = e.target.href.match(/#([\s\S]*)$/)[1];
+                        var hash = hashval.substring(1);
+                        fill(hash);
+                        oldtxt = hash;
+                    }
+                });
+
+            // blog click event
+            document
+                .getElementById("content")
+                .addEventListener("click", function (e) {
+                    if (e.target && e.target.nodeName == "A") {
+                        e.preventDefault();
+                        var hashval = e.target.href.match(/#([\s\S]*)$/)[1];
+                        var hash = hashval.substring(1);
+                        fill(hash);
+                        oldtxt = hash;
+                        history.replaceState(undefined, undefined, "#!" + hash);
+                    }
+                });
+
+            // start <<<<<<<<<<<
+            // load page from URL
+            if (window.location.hash) {
+                makenav();
+                var hash = window.location.hash.substring(2);
+                fill(hash);
+                history.replaceState(undefined, undefined, "#!" + hash);
+            } else {
+                makenav();
+                document.body.className = "home";
+                fill("home");
+            }
+        </script>
+    </body>
+</html>
