@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FundiLink Tanzania - Find Trusted Craftsmen</title>
+    <!-- Load FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+            font-family: monospace;
+            margin: 0;
+            padding: 0;
+            background-color: #222;
+            color: #ccc;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+      
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .category-card {
+            background: rgba(10,10,10,0.2);
+            border-radius: 6px;
+            padding: 25px 15px;
+            text-align: center;
+            cursor: pointer;
+            /* transition: all 0.3s ease; */
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+         .category-card:hover {
+            background: rgba(30,30,30,0.8);
+         }
+        .category-icon {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: #2E86DE;
+        }
+       
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="hero">
+                <h1>Find a Trusted Fundi</h1>
+                <p>Connect with skilled, verified craftsmen across Tanzania</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="search-box">
+            <h2>What do you need help with today?</h2>
+            
+            <!-- Category Selection Grid -->
+            <div class="categories">
+                <!-- Database Code: plumber -->
+                <a class="category-card" href="/fundis/plumber">
+                    <div class="category-icon"><i class="fas fa-faucet"></i></div>
+                    <div class="category-name">Plumber</div>
+                    <div class="category-local">Fundi Bomba</div>
+                </a>
+
+                <!-- Database Code: electrician -->
+                <a class="category-card" href="/fundis/electrician">
+                    <div class="category-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="category-name">Electrician</div>
+                    <div class="category-local">Fundi Umeme</div>
+                </a>
+
+                <!-- Database Code: builder -->
+                <a class="category-card" href="/fundis/builder">
+                    <div class="category-icon"><i class="fas fa-hammer"></i></div>
+                    <div class="category-name">Builder</div>
+                    <div class="category-local">Fundi Ujenzi</div>
+                </a>
+
+                <!-- Database Code: roofer -->
+                <a class="category-card" href="/fundis/roofer">
+                    <div class="category-icon"><i class="fas fa-home"></i></div>
+                    <div class="category-name">Roofer</div>
+                    <div class="category-local">Fundi Mabati</div>
+                </a>
+
+                <!-- Database Code: solar_technician -->
+                <a class="category-card" href="/fundis/solar_technician">
+                    <div class="category-icon"><i class="fas fa-solar-panel"></i></div>
+                    <div class="category-name">Solar Technician</div>
+                    <div class="category-local">Fundi Umeme wa Solar</div>
+                </a>
+
+                <!-- Database Code: water_engineer -->
+                <a class="category-card" href="/fundis/water_engineer">
+                    <div class="category-icon"><i class="fas fa-water"></i></div>
+                    <div class="category-name">Water Engineer</div>
+                    <div class="category-local">Fundi Bomba wa Maji</div>
+                </a>
+
+                <!-- Database Code: tiler -->
+                <a class="category-card" href="/fundis/tiler">
+                    <div class="category-icon"><i class="fas fa-border-style"></i></div>
+                    <div class="category-name">Tiler</div>
+                    <div class="category-local">Fundi Seramik</div>
+                </a>
+
+                <!-- Database Code: carpenter -->
+                <a class="category-card" href="/fundis/carpenter">
+                    <div class="category-icon"><i class="fas fa-tree"></i></div>
+                    <div class="category-name">Carpenter</div>
+                    <div class="category-local">Fundi Urefu</div>
+                </a>
+
+                <!-- Database Code: painter -->
+                <a class="category-card" href="/fundis/painter">
+                    <div class="category-icon"><i class="fas fa-paint-roller"></i></div>
+                    <div class="category-name">Painter</div>
+                    <div class="category-local">Fundi Paint</div>
+                </a>
+
+                <!-- Database Code: metalworker -->
+                <a class="category-card" href="/fundis/metalworker">
+                    <div class="category-icon"><i class="fas fa-tools"></i></div>
+                    <div class="category-name">Metalworker</div>
+                    <div class="category-local">Fundi Bati</div>
+                </a>
+
+                <!-- Database Code: locksmith -->
+                <a class="category-card" href="/fundis/locksmith">
+                    <div class="category-icon"><i class="fas fa-key"></i></div>
+                    <div class="category-name">Locksmith</div>
+                    <div class="category-local">Fundi Funguo</div>
+                </a>
+
+                <!-- Database Code: tree_surgeon -->
+                <a class="category-card" href="/fundis/tree_surgeon">
+                    <div class="category-icon"><i class="fas fa-leaf"></i></div>
+                    <div class="category-name">Tree Surgeon</div>
+                    <div class="category-local">Fundi Miti</div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
